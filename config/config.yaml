@@ -1,0 +1,111 @@
+# Enterprise Data Integration - Configuration File
+
+project:
+  name: "Enterprise Data Integration Platform"
+  version: "1.0.0"
+  environment: "development"  # development, staging, production
+
+# Data Generation Settings
+data_generation:
+  customers:
+    count: 50000
+    seed: 42  # For reproducibility
+    start_date: "2020-01-01"
+    end_date: "2026-01-26"
+  
+  transactions:
+    count: 200000
+    min_amount: 5.0
+    max_amount: 5000.0
+    products_count: 500
+  
+  campaigns:
+    count: 25
+    response_rate: 0.15  # 15% response rate
+
+# File Paths
+paths:
+  raw_data: "data/raw"
+  staging_data: "data/staging"
+  processed_data: "data/processed"
+  logs: "logs"
+  documentation: "docs"
+
+# Database Configuration
+database:
+  type: "postgresql"  # postgresql or sqlserver
+  host: "localhost"
+  port: 5432
+  staging_database: "staging_db"
+  warehouse_database: "warehouse_db"
+  # Credentials loaded from database.ini
+
+# ETL Settings
+etl:
+  batch_size: 10000  # Records per batch
+  parallel_processing: true
+  max_workers: 4
+  
+  # Incremental load settings
+  incremental:
+    enabled: true
+    watermark_column: "last_modified_date"
+  
+  # Error handling
+  error_threshold: 0.05  # 5% error tolerance
+  continue_on_error: false
+
+# Data Quality Rules
+data_quality:
+  enabled: true
+  fail_on_error: true
+  
+  # Quality dimensions
+  completeness_threshold: 0.95  # 95% non-null
+  accuracy_threshold: 0.99      # 99% accuracy
+  
+  # Validation levels
+  validate_schema: true
+  validate_business_rules: true
+  validate_reconciliation: true
+
+# SCD Configuration
+scd:
+  type2_columns:
+    dim_customer:
+      - address
+      - city
+      - state
+      - postal_code
+      - customer_segment
+  
+  type1_columns:
+    dim_customer:
+      - email
+      - phone_number
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_to_file: true
+  log_to_console: true
+  max_file_size_mb: 10
+  backup_count: 5
+
+# Reporting Settings
+reporting:
+  power_bi:
+    enabled: true
+    refresh_schedule: "daily"
+  
+  email_alerts:
+    enabled: false
+    recipients: []
+    
+# Performance Settings
+performance:
+  chunk_size: 50000
+  use_bulk_insert: true
+  vacuum_after_load: true
+  analyze_after_load: true

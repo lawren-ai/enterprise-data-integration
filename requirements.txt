@@ -1,0 +1,42 @@
+# Core Data Processing
+pandas==2.1.4
+numpy==1.26.2
+sqlalchemy
+psycopg2-binary==2.9.9  # PostgreSQL driver
+pyodbc==5.0.1  # SQL Server driver (optional)
+
+# Data Generation
+faker==22.0.0
+python-dateutil==2.8.2
+
+# Data Quality
+great-expectations==0.18.8
+pandera==0.17.2
+
+# Configuration Management
+pyyaml==6.0.1
+python-dotenv==1.0.0
+configparser==6.0.0
+
+# Logging and Monitoring
+loguru==0.7.2
+
+# Data Visualization (for profiling)
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Excel handling (for documentation)
+openpyxl==3.1.2
+xlsxwriter==3.1.9
+
+# Scheduling (optional)
+schedule==1.2.0
+apache-airflow==2.8.0  # Optional: for advanced orchestration
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Utilities
+tqdm==4.66.1  # Progress bars
+colorama==0.4.6  # Colored terminal output

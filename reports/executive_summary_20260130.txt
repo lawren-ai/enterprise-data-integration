@@ -1,0 +1,30 @@
+================================================================================
+DATA QUALITY EXECUTIVE SUMMARY
+Report Date: January 30, 2026
+================================================================================
+
+OVERALL QUALITY SCORE: 95.6%
+
+KEY METRICS:
+  • Total Rules Executed: 30
+  • Rules Passed: 24 (80%)
+  • Rules Failed: 4
+  • Rules with Warnings: 2
+  • Records Validated: 3,107,232
+  • Issues Identified: 112,880
+
+QUALITY DIMENSIONS:
+  • Completeness: 85.4%
+  • Accuracy: 100.0%
+  • Consistency: 83.8%
+  • Validity: 100.0%
+  • Uniqueness: 100.0%
+  • Timeliness: 100.0%
+  • Integrity: 100.0%
+
+RECOMMENDATIONS:
+  • IMMEDIATE ACTION: Review and remediate failed validation rules
+  • Address data completeness gaps in source systems
+  • Data quality is excellent - maintain current processes
+
+================================================================================
